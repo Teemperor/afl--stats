@@ -1357,6 +1357,9 @@ void perform_dry_run(afl_state_t *afl) {
 
   }
 
+  afl->force_ui_update = true;
+  show_stats(afl); // CHANGE: print stats after seeds are processed.
+  afl->force_ui_update = false;
   OKF("All test cases processed.");
 
 }
